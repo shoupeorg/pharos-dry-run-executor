@@ -53,6 +53,7 @@ Versioned evidence is immutable under `evidence/`; public copies are under `publ
 - `publish-source.ps1`
 - `provision-deploy.ps1`
 - `verify-public.mjs`
+- `resume-publication-deploy.ps1` — resumes only external publication/deployment stages after local completion.
 
 The Cloudflare D1 identifier in `wrangler.jsonc` must be replaced by the provision script before deployment.
 

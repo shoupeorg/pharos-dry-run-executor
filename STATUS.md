@@ -1,7 +1,7 @@
 # Status
 
 - Project: Pharos Dry-Run Executor
-- Stage: LOCAL_DELIVERY_COMPLETE_PUBLICATION_PENDING
+- Stage: EXTERNAL_AUTHENTICATION_BLOCKED
 - Updated: 2026-10-24
 
 ## Preserved implementation
@@ -22,6 +22,13 @@
 ## Remaining
 
 - GitHub publication and Cloudflare deployment.
+
+## External blocker
+
+- The public GitHub repository was created at `https://github.com/shoupeorg/pharos-dry-run-executor`.
+- Sandbox push failed once with `cannot spawn sh: No such file or directory` and `could not read Username for 'https://github.com'`.
+- Sandbox Wrangler reported no accessible authenticated session. No OAuth loop was started.
+- `scripts/resume-publication-deploy.ps1` resumes only source push, D1 provision/migration, one deployment, config push, and public verification from a normal PowerShell session.
 
 ## Gate verification
 
