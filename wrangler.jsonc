@@ -1,0 +1,10 @@
+{
+  "name":"pharos-dry-run-executor",
+  "main":"worker.js",
+  "compatibility_date":"2026-10-24",
+  "compatibility_flags":["nodejs_compat"],
+  "workers_dev":true,
+  "assets":{"directory":"./public","binding":"ASSETS","run_worker_first":["/api/*"]},
+  "d1_databases":[{"binding":"DB","database_name":"pharos-dry-run-executor","database_id":"00000000-0000-0000-0000-000000000000","migrations_dir":"migrations"}],
+  "observability":{"enabled":true}
+}

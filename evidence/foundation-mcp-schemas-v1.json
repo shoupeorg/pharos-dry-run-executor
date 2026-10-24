@@ -1,0 +1,60 @@
+{
+  "capturedAt": "2026-10-24T06:54:53.282Z",
+  "endpoint": "https://mcp.pharos.xyz/mcp",
+  "transport": "Streamable HTTP MCP",
+  "schemas": {
+    "eth_call": {
+      "type": "object",
+      "properties": {
+        "transaction": {
+          "type": "object",
+          "properties": {
+            "from": { "type": "string" },
+            "to": { "type": "string" },
+            "data": { "type": "string" },
+            "value": { "type": "string" },
+            "gas": { "type": "string" },
+            "gasPrice": { "type": "string" },
+            "maxFeePerGas": { "type": "string" },
+            "maxPriorityFeePerGas": { "type": "string" },
+            "nonce": { "type": "string" }
+          }
+        },
+        "block": { "anyOf": [{ "type": "string" }, { "type": "number" }] }
+      },
+      "required": ["transaction"]
+    },
+    "estimate_gas": {
+      "type": "object",
+      "properties": {
+        "transaction": {
+          "type": "object",
+          "properties": {
+            "from": { "type": "string" },
+            "to": { "type": "string" },
+            "data": { "type": "string" },
+            "value": { "type": "string" },
+            "gas": { "type": "string" },
+            "gasPrice": { "type": "string" },
+            "maxFeePerGas": { "type": "string" },
+            "maxPriorityFeePerGas": { "type": "string" },
+            "nonce": { "type": "string" }
+          }
+        }
+      },
+      "required": ["transaction"]
+    }
+  },
+  "interpretation": {
+    "ethCallBlockSupported": true,
+    "estimateGasBlockSupported": false,
+    "traceOrStateDiffTools": [],
+    "rule": "Send block only to tools whose advertised input schema contains block. Treat estimate_gas and gas-price observations as live and unpinned."
+  },
+  "allToolNames": [
+    "get_chain_info", "get_block_number", "get_balance", "get_transaction_count",
+    "get_gas_price", "get_block", "get_transaction", "get_transaction_receipt",
+    "get_code", "get_storage_at", "eth_call", "estimate_gas", "get_logs",
+    "send_raw_transaction"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-10-24T07:05:48.446Z",
+  "method": "POST",
+  "path": "/api/reports/732144a9-1b5b-4f58-bc1f-08787affce1c/prepare",
+  "reportId": "732144a9-1b5b-4f58-bc1f-08787affce1c",
+  "request": {
+    "workspaceId": "public-evidence-v1",
+    "mode": "erc20",
+    "chainId": 1672,
+    "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+    "to": "0x4117b9737f64d816be36f6c18c72409c98e4737c",
+    "token": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "amount": "2200.000041",
+    "minimumRetainedNative": "0.1",
+    "gasBufferBps": 2000,
+    "gasPriceCeilingGwei": "100"
+  },
+  "response": {
+    "status": 409,
+    "contentType": "application/json; charset=utf-8",
+    "data": {
+      "error": "Unsigned preparation blocked: decision is NO_GO.",
+      "gate": "BLOCKED",
+      "readOnly": true
+    }
+  }
+}

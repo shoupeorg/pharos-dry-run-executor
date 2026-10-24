@@ -1,0 +1,207 @@
+{
+  "engineVersion": "dry-run-executor/1.1.0",
+  "decision": "NO_GO",
+  "reasons": [
+    "ERC20: transfer amount exceeds balance",
+    "Gas estimation reverted: ERC20: transfer amount exceeds balance"
+  ],
+  "transaction": {
+    "chainId": 1672,
+    "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x0",
+    "data": "0xa9059cbb0000000000000000000000004117b9737f64d816be36f6c18c72409c98e4737c0000000000000000000000000000000000000000000000000000000083215629"
+  },
+  "transactionDigest": "sha256:a7c5254a68ad0798841486d545f1a4b7fa52709e5bba78f2d5bb1ab84e7566cf",
+  "constraints": {
+    "minimumRetainedNativeWei": "100000000000000000",
+    "gasBufferBps": 2000,
+    "gasPriceCeilingWei": "100000000000"
+  },
+  "constraintsDigest": "sha256:f8e8c60beff351cedd37bf05b30ceebfb1a23a7208d46436c19c22e37cabe791",
+  "simulation": {
+    "call": {
+      "status": "REVERT",
+      "revert": {
+        "kind": "ERROR_STRING",
+        "reason": "ERC20: transfer amount exceeds balance",
+        "raw": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000",
+        "message": "execution reverted: ERC20: transfer amount exceeds balance"
+      }
+    },
+    "estimate": {
+      "status": "REVERT",
+      "revert": {
+        "kind": "ERROR_STRING",
+        "reason": "ERC20: transfer amount exceeds balance",
+        "raw": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000",
+        "message": "execution reverted: ERC20: transfer amount exceeds balance"
+      }
+    },
+    "returnCompatibility": null
+  },
+  "cost": {
+    "gasEstimate": null,
+    "bufferedGasLimit": null,
+    "gasPriceWei": "10000000000",
+    "estimatedGasCostWei": null,
+    "bufferedGasBudgetWei": null,
+    "nativeValueWei": "0",
+    "requiredNativeBalanceWei": null,
+    "remainingAfterBufferedBudgetWei": null,
+    "feeDisclosure": "gas × gas price is a modeled budget, not the exact eventual fee; native value is separate."
+  },
+  "effects": [
+    {
+      "account": "0x15ddce897d76ac39c188ade4d353711a60395315",
+      "asset": "USDC",
+      "provenance": "REVERTED_CALL_MODEL",
+      "before": "2200.00004",
+      "expectedAfter": "2200.00004",
+      "explanation": "The simulated token call reverted, so no token state transition is modeled. No transaction was sent."
+    },
+    {
+      "account": "0x4117b9737f64d816be36f6c18c72409c98e4737c",
+      "asset": "USDC",
+      "provenance": "REVERTED_CALL_MODEL",
+      "before": "0",
+      "expectedAfter": "0",
+      "explanation": "The simulated token call reverted, so no token state transition is modeled. No transaction was sent."
+    }
+  ],
+  "block": {
+    "hex": "0x141f0ae",
+    "decimal": "21098670",
+    "hash": "0x66c3e310084e7cd7689787aaed7bdbbc38fea78bb9dfed584ec6ed6aee376a2e",
+    "timestamp": "2026-10-24T07:05:37.000Z"
+  },
+  "freshness": {
+    "simulatedAt": "2026-10-24T07:05:46.828Z",
+    "expiresAt": "2026-10-24T07:10:46.828Z",
+    "ethCallPinned": true,
+    "estimateGasPinned": false,
+    "gasPricePinned": false
+  },
+  "traceAvailable": false,
+  "limitations": [
+    "Exact post-state unavailable: Chain MCP exposes no tracing or state-diff tool.",
+    "Gas estimate and gas price are live but unpinned."
+  ],
+  "id": "732144a9-1b5b-4f58-bc1f-08787affce1c",
+  "workspaceId": "public-evidence-v1",
+  "request": {
+    "workspaceId": "public-evidence-v1",
+    "mode": "erc20",
+    "chainId": 1672,
+    "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+    "to": "0x4117b9737f64d816be36f6c18c72409c98e4737c",
+    "token": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "amount": "2200.000041",
+    "minimumRetainedNative": "0.1",
+    "gasBufferBps": 2000,
+    "gasPriceCeilingGwei": "100",
+    "tokenDecimals": 6,
+    "tokenSymbol": "USDC"
+  },
+  "evidence": {
+    "chainId": 1672,
+    "block": {
+      "hex": "0x141f0ae",
+      "decimal": "21098670",
+      "hash": "0x66c3e310084e7cd7689787aaed7bdbbc38fea78bb9dfed584ec6ed6aee376a2e",
+      "timestamp": "2026-10-24T07:05:37.000Z"
+    },
+    "mcpEndpoint": "https://mcp.pharos.xyz/mcp",
+    "senderNativeBalanceWei": "181263036931531768767",
+    "recipientNativeBalanceWei": null,
+    "recipientCode": "0x",
+    "gasPriceWei": "10000000000",
+    "call": {
+      "status": "fulfilled",
+      "value": {
+        "error": {
+          "message": "execution reverted: ERC20: transfer amount exceeds balance",
+          "code": 3,
+          "data": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000"
+        }
+      }
+    },
+    "estimate": {
+      "status": "fulfilled",
+      "value": {
+        "error": {
+          "message": "execution reverted: ERC20: transfer amount exceeds balance",
+          "code": 3,
+          "data": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000"
+        }
+      }
+    },
+    "tokenSymbol": "USDC",
+    "tokenDecimals": 6,
+    "senderTokenBalanceRaw": "2200000040",
+    "recipientTokenBalanceRaw": "0",
+    "tokenSemanticsStandard": true,
+    "observationPinning": {
+      "ethCall": true,
+      "estimateGas": false,
+      "gasPrice": false
+    },
+    "toolTrace": [
+      {
+        "operation": "senderCode",
+        "status": "fulfilled",
+        "tool": "senderCode",
+        "pinned": false
+      },
+      {
+        "operation": "recipientCode",
+        "status": "fulfilled",
+        "tool": "recipientCode",
+        "pinned": false
+      },
+      {
+        "operation": "senderNative",
+        "status": "fulfilled",
+        "tool": "senderNative",
+        "pinned": false
+      },
+      {
+        "operation": "gasPrice",
+        "status": "fulfilled",
+        "tool": "gasPrice",
+        "pinned": false
+      },
+      {
+        "operation": "call",
+        "status": "fulfilled",
+        "tool": "eth_call",
+        "pinned": true
+      },
+      {
+        "operation": "estimate",
+        "status": "fulfilled",
+        "tool": "estimate_gas",
+        "pinned": false
+      },
+      {
+        "operation": "senderToken",
+        "status": "fulfilled",
+        "tool": "senderToken",
+        "pinned": false
+      },
+      {
+        "operation": "recipientToken",
+        "status": "fulfilled",
+        "tool": "recipientToken",
+        "pinned": false
+      }
+    ]
+  },
+  "historical": false,
+  "createdAt": "2026-10-24T07:05:46.828Z",
+  "toolSchemas": {
+    "ethCallBlockSupported": true,
+    "estimateGasBlockSupported": false,
+    "tracingAvailable": false
+  }
+}

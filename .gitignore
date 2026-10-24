@@ -1,0 +1,11 @@
+node_modules/
+.npm-cache/
+.uv-cache/
+.skill-deps/
+.skill-validator-deps/
+.wrangler/
+.xdg/
+.dev.vars
+.env
+/worker.js
+*.log

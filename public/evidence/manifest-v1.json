@@ -1,0 +1,12 @@
+{
+  "version": "v1",
+  "capturedAt": "2026-10-24T07:05:22.000Z",
+  "method": "Direct invocation of the production Worker route with live official Chain MCP reads and an in-memory D1-compatible store",
+  "chainId": 1672,
+  "files": [
+    { "path": "v1-live-success.json", "sha256": "54c038629fc6553fa6141d3c21fbbff89eda2399d993db62d420c91d73f0f92b", "reportId": "fe6cbbe5-35e6-478f-a857-034e4a9a72db" },
+    { "path": "v1-live-failure.json", "sha256": "2b544a5e2fc21a96ac917779d0847b7b5e2c7d93b0a3bac096519d79c2f8db62", "reportId": "732144a9-1b5b-4f58-bc1f-08787affce1c" },
+    { "path": "v1-live-gate-rejection.json", "sha256": "817265abdd207cf435d8d1843d63106ff628869968bb1fe592356fcd1e6184a3", "reportId": "732144a9-1b5b-4f58-bc1f-08787affce1c" }
+  ],
+  "safety": "No transaction was signed or broadcast."
+}

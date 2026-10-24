@@ -1,0 +1,193 @@
+{
+  "engineVersion": "dry-run-executor/1.1.0",
+  "decision": "GO",
+  "reasons": [
+    "Both eth_call and gas estimation succeeded and native affordability constraints passed."
+  ],
+  "transaction": {
+    "chainId": 1672,
+    "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x0",
+    "data": "0xa9059cbb0000000000000000000000004117b9737f64d816be36f6c18c72409c98e4737c00000000000000000000000000000000000000000000000000000000000f4240"
+  },
+  "transactionDigest": "sha256:c0d45bf1d9fc4d533b5151c7cd05d72339c8b2d36d2a689609825ae42b3a28e3",
+  "constraints": {
+    "minimumRetainedNativeWei": "100000000000000000",
+    "gasBufferBps": 2000,
+    "gasPriceCeilingWei": "100000000000"
+  },
+  "constraintsDigest": "sha256:f8e8c60beff351cedd37bf05b30ceebfb1a23a7208d46436c19c22e37cabe791",
+  "simulation": {
+    "call": {
+      "status": "SUCCESS",
+      "returnData": "0x0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    "estimate": {
+      "status": "SUCCESS",
+      "gas": "79786"
+    },
+    "returnCompatibility": {
+      "kind": "TRUE",
+      "compatible": true,
+      "value": true
+    }
+  },
+  "cost": {
+    "gasEstimate": "79786",
+    "bufferedGasLimit": "95744",
+    "gasPriceWei": "10000000000",
+    "estimatedGasCostWei": "797860000000000",
+    "bufferedGasBudgetWei": "957440000000000",
+    "nativeValueWei": "0",
+    "requiredNativeBalanceWei": "100957440000000000",
+    "remainingAfterBufferedBudgetWei": "181262079491531768767",
+    "feeDisclosure": "gas × gas price is a modeled budget, not the exact eventual fee; native value is separate."
+  },
+  "effects": [
+    {
+      "account": "0x15ddce897d76ac39c188ade4d353711a60395315",
+      "asset": "USDC",
+      "provenance": "MODELED_ASSUMPTION",
+      "before": "2200.00004",
+      "expectedAfter": "2199.00004",
+      "explanation": "Assumes verified standard ERC-20 semantics; exact post-state still unavailable without tracing."
+    },
+    {
+      "account": "0x4117b9737f64d816be36f6c18c72409c98e4737c",
+      "asset": "USDC",
+      "provenance": "MODELED_ASSUMPTION",
+      "before": "0",
+      "expectedAfter": "1",
+      "explanation": "Assumes verified standard ERC-20 semantics; exact post-state still unavailable without tracing."
+    }
+  ],
+  "block": {
+    "hex": "0x141f09d",
+    "decimal": "21098653",
+    "hash": "0x06879285583ce56d37bd4eeb7db05e656d74c545769859d49bf8ac1810dd6a3d",
+    "timestamp": "2026-10-24T07:05:22.000Z"
+  },
+  "freshness": {
+    "simulatedAt": "2026-10-24T07:05:30.324Z",
+    "expiresAt": "2026-10-24T07:10:30.324Z",
+    "ethCallPinned": true,
+    "estimateGasPinned": false,
+    "gasPricePinned": false
+  },
+  "traceAvailable": false,
+  "limitations": [
+    "Exact post-state unavailable: Chain MCP exposes no tracing or state-diff tool.",
+    "Gas estimate and gas price are live but unpinned."
+  ],
+  "id": "fe6cbbe5-35e6-478f-a857-034e4a9a72db",
+  "workspaceId": "public-evidence-v1",
+  "request": {
+    "workspaceId": "public-evidence-v1",
+    "mode": "erc20",
+    "chainId": 1672,
+    "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+    "to": "0x4117b9737f64d816be36f6c18c72409c98e4737c",
+    "token": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "amount": "1",
+    "minimumRetainedNative": "0.1",
+    "gasBufferBps": 2000,
+    "gasPriceCeilingGwei": "100",
+    "tokenDecimals": 6,
+    "tokenSymbol": "USDC"
+  },
+  "evidence": {
+    "chainId": 1672,
+    "block": {
+      "hex": "0x141f09d",
+      "decimal": "21098653",
+      "hash": "0x06879285583ce56d37bd4eeb7db05e656d74c545769859d49bf8ac1810dd6a3d",
+      "timestamp": "2026-10-24T07:05:22.000Z"
+    },
+    "mcpEndpoint": "https://mcp.pharos.xyz/mcp",
+    "senderNativeBalanceWei": "181263036931531768767",
+    "recipientNativeBalanceWei": null,
+    "recipientCode": "0x",
+    "gasPriceWei": "10000000000",
+    "call": {
+      "status": "fulfilled",
+      "value": {
+        "result": "0x0000000000000000000000000000000000000000000000000000000000000001"
+      }
+    },
+    "estimate": {
+      "status": "fulfilled",
+      "value": {
+        "gas": "79786",
+        "gasHex": "0x137aa"
+      }
+    },
+    "tokenSymbol": "USDC",
+    "tokenDecimals": 6,
+    "senderTokenBalanceRaw": "2200000040",
+    "recipientTokenBalanceRaw": "0",
+    "tokenSemanticsStandard": true,
+    "observationPinning": {
+      "ethCall": true,
+      "estimateGas": false,
+      "gasPrice": false
+    },
+    "toolTrace": [
+      {
+        "operation": "senderCode",
+        "status": "fulfilled",
+        "tool": "senderCode",
+        "pinned": false
+      },
+      {
+        "operation": "recipientCode",
+        "status": "fulfilled",
+        "tool": "recipientCode",
+        "pinned": false
+      },
+      {
+        "operation": "senderNative",
+        "status": "fulfilled",
+        "tool": "senderNative",
+        "pinned": false
+      },
+      {
+        "operation": "gasPrice",
+        "status": "fulfilled",
+        "tool": "gasPrice",
+        "pinned": false
+      },
+      {
+        "operation": "call",
+        "status": "fulfilled",
+        "tool": "eth_call",
+        "pinned": true
+      },
+      {
+        "operation": "estimate",
+        "status": "fulfilled",
+        "tool": "estimate_gas",
+        "pinned": false
+      },
+      {
+        "operation": "senderToken",
+        "status": "fulfilled",
+        "tool": "senderToken",
+        "pinned": false
+      },
+      {
+        "operation": "recipientToken",
+        "status": "fulfilled",
+        "tool": "recipientToken",
+        "pinned": false
+      }
+    ]
+  },
+  "historical": false,
+  "createdAt": "2026-10-24T07:05:30.325Z",
+  "toolSchemas": {
+    "ethCallBlockSupported": true,
+    "estimateGasBlockSupported": false,
+    "tracingAvailable": false
+  }
+}
