@@ -16,6 +16,5 @@ export function decodeRevert(error){
   const data=error?.data||error?.error?.data||null,message=error?.message||error?.error?.message||"Simulation failed without a reason.";
   if(typeof data==="string"&&data.startsWith("0x08c379a0")&&data.length>=202){try{return{kind:"ERROR_STRING",reason:decodeString(`0x${data.slice(10)}`,"Error(string)"),raw:data,message};}catch{}}
   if(typeof data==="string"&&data.startsWith("0x4e487b71")&&data.length>=74)return{kind:"PANIC",reason:`Panic(${BigInt(`0x${data.slice(10,74)}`)})`,raw:data,message};
-  return{kind:"REVERT_OR_RPC_ERROR",reason:message,raw:data,message};
+  return{kind:"UNDECODED_REVERT",reason:message,raw:data,message};
 }
-

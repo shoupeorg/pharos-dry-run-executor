@@ -1,0 +1,34 @@
+{
+  "version": "v1.2",
+  "recordedAt": "2026-10-24T08:21:12.0953961Z",
+  "source": "Deterministic mocked-MCP regression suite",
+  "historicalEvidenceModified": false,
+  "beforeAfter": [
+    {
+      "bug": "missing-gas-price",
+      "before": "Missing gasPriceWei was coerced to zero, allowing GO and unsigned preparation.",
+      "after": "Missing, malformed, negative, or failed fee evidence remains null, yields INSUFFICIENT_DATA, and is independently blocked by authorizeUnsigned. Explicit string zero is separately supported."
+    },
+    {
+      "bug": "advanced-target",
+      "before": "Advanced mode supplied undefined to get_code through template.recipient.",
+      "after": "Advanced mode uses normalized transaction.to, performs exactly one primary eth_call and one estimate_gas with the exact transaction, and performs no token-balance calls."
+    },
+    {
+      "bug": "rpc-error-classification",
+      "before": "Every structured RPC error was labeled REVERT and missing call results counted as SUCCESS.",
+      "after": "RPC_ERROR, TRANSPORT_FAILURE, MALFORMED_RESULT, UNAVAILABLE, REVERT, and SUCCESS are distinct; original code, message, and data are retained; genuine Error(string) and Panic remain decoded."
+    },
+    {
+      "bug": "erc20-false-effects",
+      "before": "A false ERC-20 return could show modeled sender loss and recipient gain.",
+      "after": "False or malformed returns retain actual pre-balances but show UNKNOWN expected movement with an explanation that EVM completion is not ERC-20 operation success."
+    }
+  ],
+  "verification": {
+    "tests": 29,
+    "passed": 29,
+    "failed": 0,
+    "productionBuild": "PASSED"
+  }
+}

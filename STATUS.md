@@ -1,7 +1,7 @@
 # Status
 
 - Project: Pharos Dry-Run Executor
-- Stage: COMPLETE
+- Stage: V1.2_CORRECTION_TESTED_PUBLICATION_PENDING
 - Updated: 2026-10-24
 - Demo: https://pharos-dry-run-executor.shoupeorg.workers.dev
 - Repository: https://github.com/shoupeorg/pharos-dry-run-executor
@@ -36,3 +36,11 @@
 - No private key, signature, approval, broadcast, contract deployment, or blockchain spending occurred.
 - Exact post-state remains MODELED or UNKNOWN without tracing.
 - estimate_gas and gas price cannot be pinned through the advertised official schemas.
+
+## v1.2 focused correctness correction
+
+- Missing or invalid gas-price evidence now blocks GO and unsigned preparation while explicit zero remains distinguishable.
+- Advanced mode targets the normalized transaction destination and reaches both call and estimate without token-recipient reads.
+- RPC, transport, malformed-result, and confirmed EVM-revert outcomes are classified separately with raw diagnostics preserved.
+- ERC-20 false or malformed returns show UNKNOWN movement rather than a successful transfer prediction.
+- Deterministic regression suite: 29/29 passed; production build passed on 2026-10-24. Historical v1 evidence remains unchanged.

@@ -10,8 +10,11 @@ The application never accepts a private key, signs, broadcasts, approves tokens,
 - `eth_call` is sent with a recorded block because the inspected official schema supports `block`.
 - `estimate_gas` and gas price are live but unpinned because their schemas expose no block parameter.
 - A network/transport failure is `INSUFFICIENT_DATA`, never an EVM revert.
+- Missing, malformed, negative, or failed gas-price observations remain unknown and prevent `GO`; an explicit supported zero remains distinct from missing data.
+- RPC errors, transport failures, malformed responses, and confirmed EVM reverts are separate outcomes with original diagnostics preserved.
 - Expected post-state is `MODELED`, `MODELED_ASSUMPTION`, `MODELED_LIMITED`, or `UNKNOWN`; no trace/state-diff capability was advertised.
 - A failed report remains downloadable, but unsigned preparation requires a fresh `GO` report with matching transaction, constraints, chain, integrity digests, and complete simulation evidence.
+- ERC-20 `false` or malformed return data never produces a successful movement prediction; EVM completion alone is not token-operation success.
 
 See [Architecture](docs/architecture.md) and the saved [MCP schemas](evidence/foundation-mcp-schemas-v1.json).
 
